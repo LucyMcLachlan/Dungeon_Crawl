@@ -67,5 +67,7 @@ class Hero extends GameObject {
       loc= new PVector(width*0.9-10, height/2);
     }
     
+    myWeapon.update();
+    if(spacekey)myWeapon.shoot();
   }
 }

@@ -9,7 +9,7 @@ final int GameOver=4;
 boolean mouseReleased;
 boolean wasPressed;
 
-boolean wkey, akey, skey, dkey;
+boolean wkey, akey, skey, dkey, spacekey;
 Buttons startButton, pauseButton, playButton, endButton;
 
 Gifs introGif, endGif;
@@ -20,6 +20,8 @@ Hero myHero;
 Ladder ladder;
 PImage map, map2, map3;
 color northRoom, eastRoom, southRoom, westRoom;
+
+Weapon myWeapon;
 
 void setup() {
   size(800, 600);
@@ -56,6 +58,8 @@ void setup() {
   map =  loadImage("map 1.png");
   map2 = loadImage("map 2.png");
   map3 = loadImage("map 3.png");
+  
+  myWeapon= new Weapon();
 }
 
 void draw() {
@@ -80,6 +84,7 @@ void keyPressed() {
   if (key =='a'||key=='A')akey=true;
   if (key =='s'||key=='S')skey=true;
   if (key =='d'||key=='D')dkey=true;
+  if(keyCode==' ')spacekey=true;
 }
 
 void keyReleased() {
@@ -87,4 +92,5 @@ void keyReleased() {
   if (key =='a'||key=='A')akey=false;
   if (key =='s'||key=='S')skey=false;
   if (key =='d'||key=='D')dkey=false;
+  if(keyCode==' ')spacekey=false;
 }

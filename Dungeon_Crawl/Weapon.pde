@@ -1,15 +1,33 @@
 class Weapon {
 
-int shotTimer;
-int threshold;
-int bulletSpeed;
+  int shotTimer;
+  int threshold;
+  int bulletSpeed;
 
-Weapon(){}
+  Weapon() {
 
+    shotTimer=0;
+    threshold =30;
+    bulletSpeed =5;
+  }
 
+  Weapon(int thr, int bs) {
 
-void show(){}
+    shotTimer=0;
+    threshold = thr;
+    bulletSpeed = bs;
+  }
 
-void act(){}
+  void update() {
+    shotTimer++;
+  }
+  void shoot(){
+    if(shotTimer >= threshold){
+    PVector aimVector = new PVector (mouseX-myHero.loc.x,mouseY-myHero.loc.y);
+    aimVector.setMag(bulletSpeed);
+    myObjects.add(new Bullet(aimVector,10));
+    shotTimer=0;
+    }
+  }
 
 }
