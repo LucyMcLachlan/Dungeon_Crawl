@@ -31,18 +31,7 @@ class Hero extends GameObject {
     if (wkey && dkey||wkey&& skey||akey&&skey||dkey&&skey)vel.setMag(speed);
     loc.add(vel);
 
-    if (loc.x>720) {
-      loc.x=720;
-    }
-    if (loc.x<80) {
-      loc.x=80;
-    }
-    if (loc.y>540) {
-      loc.y=540;
-    }
-    if (loc.y<height*0.1) {
-      loc.y=height*0.1;
-    }
+    
 
 
     if (northRoom != #FFFFFF && loc.x >= width/2-50 && loc.x <= width/2+50 &&loc.y == height*0.1) {

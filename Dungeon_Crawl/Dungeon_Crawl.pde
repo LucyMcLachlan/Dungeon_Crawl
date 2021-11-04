@@ -59,7 +59,7 @@ void setup() {
   map2 = loadImage("map 2.png");
   map3 = loadImage("map 3.png");
   
-  myWeapon= new Weapon();
+  myWeapon= new Ice();
 }
 
 void draw() {

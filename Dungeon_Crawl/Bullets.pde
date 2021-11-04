@@ -33,6 +33,19 @@ class Bullet extends GameObject{
      hp=0;
    }
    
+   if (loc.x>710) {
+    hp=0;
+    }
+    if (loc.x<90) {
+     hp=0;
+    }
+    if (loc.y>530) {
+      hp=0;
+    }
+    if (loc.y<height*0.12) {
+      hp=0;
+    }
+   
    }
 
 
