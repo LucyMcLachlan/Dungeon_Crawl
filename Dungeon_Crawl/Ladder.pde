@@ -4,13 +4,14 @@ class Ladder  extends GameObject {
   int size=60;
 
 
-  Ladder(float _x, float _y) {
-    loc= new PVector(_x, _y);
+  Ladder(int _x, int _y, int _z) {
+    loc= new PVector(width/2, height/2);
     hp=1;
     println("LADDER IS HERE!");
     vel = new PVector(0, 0);
-    roomX=2;
-    roomY=1;
+    roomX=_x;
+    roomY=_y;
+    roomZ=_z;
   }
 
   void show() {
@@ -23,10 +24,12 @@ class Ladder  extends GameObject {
 
   void act() {
 
-    if (dist(loc.x, loc.y, myHero.loc.x, myHero.loc.y)<size/2 + ladder.size/1.5) {
-      myHero.floor++; 
+    if (dist(loc.x, loc.y, myHero.loc.x, myHero.loc.y)<size/2 + myHero.size/2) {
       myHero.roomX=1; 
       myHero.roomY=1;
+      if (myHero.roomZ==1) {
+        myHero.roomZ=2;
+      }
     }
   }
 }

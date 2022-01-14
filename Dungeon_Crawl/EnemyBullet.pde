@@ -1,4 +1,4 @@
-class Bullet extends GameObject {
+class EnemyBullet extends GameObject {
 
   //instance var
   int timer;
@@ -6,14 +6,21 @@ class Bullet extends GameObject {
   PVector bulletVector;
   color c;
   //constructor
-  Bullet(PVector speed, int size, color _c) {
+  EnemyBullet(PVector speed, PVector loca, int size) {
     timer =  50;
-    hp    =  1;
+    hp =  1;
     size  =  10;
-    c     =  _c;
-    loc   =  new PVector(myHero.loc.x, myHero.loc.y);
+    int i=0;
+    loc = loca.copy();
+    //while (i< myObjects.size()) {
+    //  GameObject myObj = myObjects.get(i);
+    //  if (myObj instanceof Enemy) {
+    //    loc   =  new PVector(myObj.loc.x, myObj.loc.y);
+    //  }
+    //  i++;
+    //}
+
     vel=speed;
-    vel.add(myHero.vel);
     vel.setMag(10);
     bulletsize=size;
     roomX=myHero.roomX;
@@ -23,7 +30,7 @@ class Bullet extends GameObject {
 
   void show() {
     stroke(255);
-    fill(c);
+    noFill();
     circle(loc.x, loc.y, bulletsize);
   }
 

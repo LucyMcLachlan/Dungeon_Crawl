@@ -23,6 +23,13 @@ class Gifs {
     image(images[currentImg], width/2, height/2, width, height);
     if (frameCount % rate == 0) currentImg++;
   }
+  
+  void show(float x, float y, float w, float h){
+  if (currentImg >= images.length) currentImg = 0;
+    image(images[currentImg], x, y, w, h);
+    if (frameCount % rate == 0) currentImg++;
+  
+  }
 
   void loadImages(String prefix, String suffix) {
     int i = 0;
